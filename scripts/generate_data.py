@@ -7,7 +7,7 @@ import json
 import sys
 from pathlib import Path
 
-from scripts.fetch_opinet import normalize_station, search_region, station_detail
+from scripts.fetch_opinet import is_station_in_region, normalize_station, search_region, station_detail
 from scripts.station_data import haversine_km, sort_stations, validate_station_records
 
 
@@ -24,10 +24,15 @@ def build_snapshot(args: argparse.Namespace) -> dict:
         raise RuntimeError("Opinet returned no nearby stations; refusing to publish an empty snapshot")
     stations: list[dict] = []
     failures: list[dict] = []
+    excluded_count = 0
     for raw in raw_stations:
         station_id = str(raw.get("UNI_ID") or "")
         try:
-            item = normalize_station(raw, station_detail(station_id), args.fuel_product)
+            detail = station_detail(station_id)
+            if not is_station_in_region(detail, args.region):
+                excluded_count += 1
+                continue
+            item = normalize_station(raw, detail, args.fuel_product)
             item["distance_km"] = round(haversine_km(
                 args.anchor_latitude, args.anchor_longitude,
                 item["latitude"], item["longitude"],
@@ -65,6 +70,7 @@ def build_snapshot(args: argparse.Namespace) -> dict:
                 "west": args.region_west, "east": args.region_east,
             },
             "candidate_count": len(raw_stations),
+            "excluded_outside_region_count": excluded_count,
             "success_count": len(stations),
             "failure_count": len(failures),
             "failures": failures,

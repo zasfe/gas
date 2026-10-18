@@ -98,6 +98,10 @@ def station_detail(station_id: str) -> dict[str, Any]:
     return records[0]
 
 
+def is_station_in_region(detail: dict[str, Any], region_code: str) -> bool:
+    return str(detail.get("SIGUNCD") or "") == str(region_code)
+
+
 def normalize_station(raw: dict[str, Any], detail: dict[str, Any], product_code: str) -> dict[str, Any]:
     products = detail.get("OIL_PRICE", [])
     if isinstance(products, dict):
