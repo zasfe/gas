@@ -1,0 +1,50 @@
+name: Refresh Opinet snapshot
+on:
+  workflow_dispatch:
+    inputs:
+      region:
+        description: Opinet region code
+        required: true
+        default: '0203'
+      fuel_product:
+        description: Product code
+        required: true
+        default: B027
+      anchor_name:
+        required: true
+        default: 롯데슈퍼프레시 신곡점
+      anchor_address:
+        required: true
+        default: 경기 의정부시 동일로 583
+      allow_partial:
+        description: Publish despite detail failures
+        required: true
+        type: boolean
+        default: false
+permissions:
+  contents: write
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: pip install -r requirements.txt
+      - name: Generate snapshot
+        env:
+          OPINET_API_KEY: ${{ secrets.OPINET_API_KEY }}
+        run: |
+          args=(--region "${{ inputs.region }}" --fuel-product "${{ inputs.fuel_product }}" \
+            --anchor-name "${{ inputs.anchor_name }}" --anchor-address "${{ inputs.anchor_address }}")
+          if [ "${{ inputs.allow_partial }}" = "true" ]; then args+=(--allow-partial); fi
+          python scripts/generate_data.py "${args[@]}"
+          python scripts/validate_data.py public/data.json
+      - name: Commit snapshot
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add public/data.json
+          git diff --cached --quiet || git commit -m "chore: refresh Opinet snapshot"
+          git push

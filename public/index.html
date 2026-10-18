@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>의정부 주유소 가격 지도</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <p class="eyebrow">OPINET SNAPSHOT</p>
+      <h1>의정부 주유소 가격 지도</h1>
+      <p id="summary">데이터를 불러오는 중입니다.</p>
+    </header>
+    <section class="dashboard">
+      <div id="map" aria-label="주유소 지도"></div>
+      <section class="panel">
+        <div class="panel-heading"><h2>가격순 주유소</h2><span id="updated"></span></div>
+        <div class="table-wrap"><table><thead><tr><th>순위</th><th>주유소</th><th>거리</th><th>가격</th><th>기준시각</th></tr></thead><tbody id="station-rows"></tbody></table></div>
+      </section>
+    </section>
+    <footer id="status"></footer>
+  </main>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="app.js"></script>
+</body>
+</html>
