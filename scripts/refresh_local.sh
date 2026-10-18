@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
+export PYTHONDONTWRITEBYTECODE=1
 
 PROJECT=/workspace/gas
 RUNTIME=/workspace/.runtime/zasfe-gas-opinet-refresh
