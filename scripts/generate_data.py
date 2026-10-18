@@ -17,6 +17,8 @@ def now_iso() -> str:
 
 def build_snapshot(args: argparse.Namespace) -> dict:
     raw_stations = search_nearby(args.anchor_latitude, args.anchor_longitude, args.radius_m, args.fuel_product)
+    if not raw_stations:
+        raise RuntimeError("Opinet returned no nearby stations; refusing to publish an empty snapshot")
     stations: list[dict] = []
     failures: list[dict] = []
     for raw in raw_stations:
