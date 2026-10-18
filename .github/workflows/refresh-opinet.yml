@@ -39,7 +39,7 @@ jobs:
           args=(--region "${{ inputs.region }}" --fuel-product "${{ inputs.fuel_product }}" \
             --anchor-name "${{ inputs.anchor_name }}" --anchor-address "${{ inputs.anchor_address }}")
           if [ "${{ inputs.allow_partial }}" = "true" ]; then args+=(--allow-partial); fi
-          python scripts/generate_data.py "${args[@]}"
+          python -m scripts.generate_data "${args[@]}"
           python scripts/validate_data.py public/data.json
       - name: Commit snapshot
         run: |
