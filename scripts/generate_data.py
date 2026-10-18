@@ -7,7 +7,7 @@ import json
 import sys
 from pathlib import Path
 
-from scripts.fetch_opinet import normalize_station, search_nearby, station_detail
+from scripts.fetch_opinet import normalize_station, search_region, station_detail
 from scripts.station_data import haversine_km, sort_stations, validate_station_records
 
 
@@ -16,7 +16,10 @@ def now_iso() -> str:
 
 
 def build_snapshot(args: argparse.Namespace) -> dict:
-    raw_stations = search_nearby(args.anchor_latitude, args.anchor_longitude, args.radius_m, args.fuel_product)
+    raw_stations = search_region(
+        args.region_south, args.region_north, args.region_west, args.region_east,
+        args.radius_m, args.fuel_product,
+    )
     if not raw_stations:
         raise RuntimeError("Opinet returned no nearby stations; refusing to publish an empty snapshot")
     stations: list[dict] = []
@@ -56,6 +59,11 @@ def build_snapshot(args: argparse.Namespace) -> dict:
         "stations": stations,
         "metadata": {
             "radius_m": args.radius_m,
+            "coverage": "Uijeongbu municipal bounding box queried by overlapping 5km grids",
+            "bbox": {
+                "south": args.region_south, "north": args.region_north,
+                "west": args.region_west, "east": args.region_east,
+            },
             "candidate_count": len(raw_stations),
             "success_count": len(stations),
             "failure_count": len(failures),
@@ -76,6 +84,10 @@ def main() -> int:
     parser.add_argument("--anchor-latitude", type=float, default=37.7343555)
     parser.add_argument("--anchor-longitude", type=float, default=127.0582703)
     parser.add_argument("--radius-m", type=int, default=5000)
+    parser.add_argument("--region-south", type=float, default=37.6859363)
+    parser.add_argument("--region-north", type=float, default=37.7803653)
+    parser.add_argument("--region-west", type=float, default=127.0016103)
+    parser.add_argument("--region-east", type=float, default=127.1473932)
     parser.add_argument("--allow-partial", action="store_true")
     args = parser.parse_args()
     snapshot = build_snapshot(args)

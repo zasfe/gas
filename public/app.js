@@ -25,7 +25,7 @@
       marker.bindPopup(`<strong>${escapeHtml(station.name)}</strong><br>${escapeHtml(station.address)}<br>${money(station.price)} · ${distance(station.distance_km)}<br>기준 ${escapeHtml(time(station.trade_date, station.trade_time))}`);
       markers.set(station.id, marker);
     });
-    document.querySelector('#summary').textContent = `${data.fuel.name} · 기준점 반경 ${data.metadata.radius_m.toLocaleString()}m · ${stations.length}개 주유소`;
+    document.querySelector('#summary').textContent = `${data.fuel.name} · 의정부시 전체 범위 · ${stations.length}개 주유소`;
     document.querySelector('#updated').textContent = `조회 ${data.metadata.fetched_at || data.generated_at}`;
     document.querySelector('#station-rows').innerHTML = stations.map(station => `<tr data-id="${escapeHtml(station.id)}"><td>${station.rank}</td><td>${escapeHtml(station.name)}</td><td>${distance(station.distance_km)}</td><td class="price">${money(station.price)}</td><td>${escapeHtml(time(station.trade_date, station.trade_time))}</td></tr>`).join('');
     document.querySelectorAll('#station-rows tr').forEach(row => row.addEventListener('click', () => { const marker = markers.get(row.dataset.id); if (marker) { map.setView(marker.getLatLng(), 15); marker.openPopup(); } }));

@@ -48,6 +48,30 @@ def wgs84_to_katec(latitude: float, longitude: float) -> tuple[float, float]:
     return transformer.transform(longitude, latitude)
 
 
+def region_grid_points(
+    south: float, north: float, west: float, east: float,
+    latitude_step: float = 0.05, longitude_step: float = 0.07,
+) -> list[tuple[float, float]]:
+    points: list[tuple[float, float]] = []
+    lat = south
+    while lat <= north + 1e-9:
+        lon = west
+        while lon <= east + 1e-9:
+            points.append((round(lat, 5), round(lon, 5)))
+            lon += longitude_step
+        lat += latitude_step
+    return points
+
+
+def deduplicate_stations(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    unique: dict[str, dict[str, Any]] = {}
+    for record in records:
+        station_id = str(record.get("UNI_ID") or "")
+        if station_id and station_id not in unique:
+            unique[station_id] = record
+    return list(unique.values())
+
+
 def search_nearby(latitude: float, longitude: float, radius_m: int, product_code: str) -> list[dict[str, Any]]:
     x, y = wgs84_to_katec(latitude, longitude)
     payload = _request("aroundAll.do", {
@@ -55,6 +79,16 @@ def search_nearby(latitude: float, longitude: float, radius_m: int, product_code
         "prodcd": product_code, "sort": 2,
     })
     return _records(payload)
+
+
+def search_region(
+    south: float, north: float, west: float, east: float,
+    radius_m: int, product_code: str,
+) -> list[dict[str, Any]]:
+    records: list[dict[str, Any]] = []
+    for latitude, longitude in region_grid_points(south, north, west, east):
+        records.extend(search_nearby(latitude, longitude, radius_m, product_code))
+    return deduplicate_stations(records)
 
 
 def station_detail(station_id: str) -> dict[str, Any]:
