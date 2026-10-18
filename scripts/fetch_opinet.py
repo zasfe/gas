@@ -13,7 +13,7 @@ BASE_URL = "https://www.opinet.co.kr/api"
 
 
 def _request(endpoint: str, params: dict[str, Any]) -> dict[str, Any]:
-    query = {**params, "code": os.environ["OPINET_API_KEY"], "out": "json"}
+    query = {**params, "certkey": os.environ["OPINET_API_KEY"], "out": "json"}
     url = f"{BASE_URL}/{endpoint}?{urllib.parse.urlencode(query)}"
     request = urllib.request.Request(url, headers={"User-Agent": "zasfe-gas/0.1"})
     with urllib.request.urlopen(request, timeout=30) as response:
