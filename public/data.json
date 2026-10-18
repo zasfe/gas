@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-18T04:30:10+00:00",
+  "source": "Opinet",
+  "region": {
+    "code": "0203",
+    "name": "의정부시"
+  },
+  "fuel": {
+    "product_code": "B027",
+    "name": "보통휘발유",
+    "unit": "KRW/L"
+  },
+  "anchor": {
+    "name": "롯데슈퍼프레시 신곡점",
+    "address": "경기 의정부시 동일로 583",
+    "latitude": 37.7343555,
+    "longitude": 127.0582703,
+    "coordinate_source": "Nominatim address search; road-address result"
+  },
+  "stations": [],
+  "metadata": {
+    "radius_m": 5000,
+    "candidate_count": 0,
+    "success_count": 0,
+    "failure_count": 0,
+    "failures": [],
+    "partial": false,
+    "fetched_at": "2026-10-18T04:30:10+00:00"
+  }
+}
