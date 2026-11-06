@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-07T08:46:01+09:00",
+  "generated_at": "2026-11-07T08:46:42+09:00",
   "source": "Opinet",
   "region": {
     "code": "0203",
@@ -490,6 +490,6 @@
     "failure_count": 0,
     "failures": [],
     "partial": false,
-    "fetched_at": "2026-11-07T08:46:01+09:00"
+    "fetched_at": "2026-11-07T08:46:42+09:00"
   }
 }
