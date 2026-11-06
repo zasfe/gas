@@ -1,7 +1,7 @@
 from scripts import fetch_opinet
 
 
-def test_request_uses_current_certkey_parameter(monkeypatch):
+def test_request_uses_current_code_parameter(monkeypatch):
     captured = {}
 
     class FakeResponse:
@@ -20,5 +20,5 @@ def test_request_uses_current_certkey_parameter(monkeypatch):
     monkeypatch.setattr(fetch_opinet.urllib.request, "urlopen", fake_urlopen)
     fetch_opinet._request("areaCode.do", {"area": "02"})
 
-    assert "certkey=test-secret" in captured["url"]
-    assert "code=" not in captured["url"]
+    assert "code=test-secret" in captured["url"]
+    assert "certkey=" not in captured["url"]
