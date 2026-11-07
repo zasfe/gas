@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-07T08:46:42+09:00",
+  "generated_at": "2026-11-08T08:00:45+09:00",
   "source": "Opinet",
   "region": {
     "code": "0203",
@@ -27,8 +27,8 @@
       "longitude": 127.0589554,
       "brand_code": null,
       "price": 1822,
-      "trade_date": "20261106",
-      "trade_time": "234723",
+      "trade_date": "20261107",
+      "trade_time": "234634",
       "distance_km": 0.25,
       "rank": 1
     },
@@ -40,8 +40,8 @@
       "longitude": 127.0629914,
       "brand_code": null,
       "price": 1822,
-      "trade_date": "20261106",
-      "trade_time": "180017",
+      "trade_date": "20261107",
+      "trade_time": "180004",
       "distance_km": 1.22,
       "rank": 2
     },
@@ -53,8 +53,8 @@
       "longitude": 127.0582941,
       "brand_code": null,
       "price": 1823,
-      "trade_date": "20261106",
-      "trade_time": "180547",
+      "trade_date": "20261107",
+      "trade_time": "180421",
       "distance_km": 0.24,
       "rank": 3
     },
@@ -80,7 +80,7 @@
       "brand_code": null,
       "price": 1823,
       "trade_date": "20261107",
-      "trade_time": "000137",
+      "trade_time": "232552",
       "distance_km": 0.71,
       "rank": 5
     },
@@ -92,8 +92,8 @@
       "longitude": 127.0660061,
       "brand_code": null,
       "price": 1823,
-      "trade_date": "20261106",
-      "trade_time": "180157",
+      "trade_date": "20261107",
+      "trade_time": "180219",
       "distance_km": 0.73,
       "rank": 6
     },
@@ -105,8 +105,8 @@
       "longitude": 127.0753426,
       "brand_code": null,
       "price": 1823,
-      "trade_date": "20261107",
-      "trade_time": "000322",
+      "trade_date": "20261108",
+      "trade_time": "000346",
       "distance_km": 1.51,
       "rank": 7
     },
@@ -118,8 +118,8 @@
       "longitude": 127.0403558,
       "brand_code": null,
       "price": 1823,
-      "trade_date": "20261106",
-      "trade_time": "215323",
+      "trade_date": "20261107",
+      "trade_time": "220050",
       "distance_km": 1.58,
       "rank": 8
     },
@@ -131,8 +131,8 @@
       "longitude": 127.0457539,
       "brand_code": null,
       "price": 1823,
-      "trade_date": "20261106",
-      "trade_time": "232418",
+      "trade_date": "20261107",
+      "trade_time": "233443",
       "distance_km": 1.62,
       "rank": 9
     },
@@ -144,8 +144,8 @@
       "longitude": 127.0352963,
       "brand_code": null,
       "price": 1823,
-      "trade_date": "20261106",
-      "trade_time": "180120",
+      "trade_date": "20261107",
+      "trade_time": "180016",
       "distance_km": 2.02,
       "rank": 10
     },
@@ -170,10 +170,23 @@
       "longitude": 127.0575679,
       "brand_code": null,
       "price": 1823,
-      "trade_date": "20261107",
-      "trade_time": "004816",
+      "trade_date": "20261108",
+      "trade_time": "005847",
       "distance_km": 2.97,
       "rank": 12
+    },
+    {
+      "id": "A0004315",
+      "name": "신화에너지 제일주유소",
+      "address": "경기 의정부시 호국로 1618 (금오동)",
+      "latitude": 37.7562416,
+      "longitude": 127.0794582,
+      "brand_code": null,
+      "price": 1823,
+      "trade_date": "20261107",
+      "trade_time": "205853",
+      "distance_km": 3.06,
+      "rank": 13
     },
     {
       "id": "A0004916",
@@ -186,7 +199,7 @@
       "trade_date": "20261101",
       "trade_time": "000657",
       "distance_km": 3.62,
-      "rank": 13
+      "rank": 14
     },
     {
       "id": "A0033586",
@@ -196,10 +209,10 @@
       "longitude": 127.1020273,
       "brand_code": null,
       "price": 1823,
-      "trade_date": "20261106",
-      "trade_time": "215638",
+      "trade_date": "20261107",
+      "trade_time": "215812",
       "distance_km": 4.28,
-      "rank": 14
+      "rank": 15
     },
     {
       "id": "A0033487",
@@ -209,10 +222,10 @@
       "longitude": 127.1125497,
       "brand_code": null,
       "price": 1823,
-      "trade_date": "20261106",
-      "trade_time": "234204",
+      "trade_date": "20261107",
+      "trade_time": "222648",
       "distance_km": 5.41,
-      "rank": 15
+      "rank": 16
     },
     {
       "id": "A0004278",
@@ -222,10 +235,10 @@
       "longitude": 127.0915591,
       "brand_code": null,
       "price": 1824,
-      "trade_date": "20261106",
+      "trade_date": "20261107",
       "trade_time": "232019",
       "distance_km": 4.43,
-      "rank": 16
+      "rank": 17
     },
     {
       "id": "A0004963",
@@ -235,22 +248,9 @@
       "longitude": 127.0481055,
       "brand_code": null,
       "price": 1828,
-      "trade_date": "20261106",
-      "trade_time": "225128",
+      "trade_date": "20261107",
+      "trade_time": "225034",
       "distance_km": 0.9,
-      "rank": 17
-    },
-    {
-      "id": "A0004315",
-      "name": "신화에너지 제일주유소",
-      "address": "경기 의정부시 호국로 1618 (금오동)",
-      "latitude": 37.7562416,
-      "longitude": 127.0794582,
-      "brand_code": null,
-      "price": 1837,
-      "trade_date": "20261106",
-      "trade_time": "213408",
-      "distance_km": 3.06,
       "rank": 18
     },
     {
@@ -261,8 +261,8 @@
       "longitude": 127.0868381,
       "brand_code": null,
       "price": 1837,
-      "trade_date": "20261107",
-      "trade_time": "005310",
+      "trade_date": "20261108",
+      "trade_time": "005828",
       "distance_km": 3.82,
       "rank": 19
     },
@@ -287,8 +287,8 @@
       "longitude": 127.0552834,
       "brand_code": null,
       "price": 1841,
-      "trade_date": "20261106",
-      "trade_time": "235123",
+      "trade_date": "20261107",
+      "trade_time": "235721",
       "distance_km": 4.68,
       "rank": 21
     },
@@ -300,8 +300,8 @@
       "longitude": 127.0470537,
       "brand_code": null,
       "price": 1845,
-      "trade_date": "20261106",
-      "trade_time": "223144",
+      "trade_date": "20261107",
+      "trade_time": "225539",
       "distance_km": 1.84,
       "rank": 22
     },
@@ -313,8 +313,8 @@
       "longitude": 127.1047761,
       "brand_code": null,
       "price": 1845,
-      "trade_date": "20261106",
-      "trade_time": "235442",
+      "trade_date": "20261107",
+      "trade_time": "235635",
       "distance_km": 4.72,
       "rank": 23
     },
@@ -326,8 +326,8 @@
       "longitude": 127.0101543,
       "brand_code": null,
       "price": 1846,
-      "trade_date": "20261107",
-      "trade_time": "001635",
+      "trade_date": "20261108",
+      "trade_time": "003807",
       "distance_km": 4.24,
       "rank": 24
     },
@@ -339,8 +339,8 @@
       "longitude": 127.1152162,
       "brand_code": null,
       "price": 1850,
-      "trade_date": "20261107",
-      "trade_time": "003050",
+      "trade_date": "20261108",
+      "trade_time": "004832",
       "distance_km": 5.02,
       "rank": 25
     },
@@ -352,8 +352,8 @@
       "longitude": 127.1015917,
       "brand_code": null,
       "price": 1854,
-      "trade_date": "20261106",
-      "trade_time": "235010",
+      "trade_date": "20261107",
+      "trade_time": "235059",
       "distance_km": 3.93,
       "rank": 26
     },
@@ -365,8 +365,8 @@
       "longitude": 127.0360687,
       "brand_code": null,
       "price": 1858,
-      "trade_date": "20261106",
-      "trade_time": "214056",
+      "trade_date": "20261107",
+      "trade_time": "214707",
       "distance_km": 1.96,
       "rank": 27
     },
@@ -378,8 +378,8 @@
       "longitude": 127.0326236,
       "brand_code": null,
       "price": 1858,
-      "trade_date": "20261106",
-      "trade_time": "235829",
+      "trade_date": "20261107",
+      "trade_time": "235346",
       "distance_km": 2.99,
       "rank": 28
     },
@@ -391,8 +391,8 @@
       "longitude": 127.1182625,
       "brand_code": null,
       "price": 1860,
-      "trade_date": "20261106",
-      "trade_time": "235727",
+      "trade_date": "20261107",
+      "trade_time": "235333",
       "distance_km": 5.49,
       "rank": 29
     },
@@ -417,8 +417,8 @@
       "longitude": 127.0850281,
       "brand_code": null,
       "price": 1868,
-      "trade_date": "20261106",
-      "trade_time": "232054",
+      "trade_date": "20261107",
+      "trade_time": "231000",
       "distance_km": 2.39,
       "rank": 31
     },
@@ -430,8 +430,8 @@
       "longitude": 127.0858691,
       "brand_code": null,
       "price": 1868,
-      "trade_date": "20261106",
-      "trade_time": "075112",
+      "trade_date": "20261107",
+      "trade_time": "111531",
       "distance_km": 2.5,
       "rank": 32
     },
@@ -443,8 +443,8 @@
       "longitude": 127.0258011,
       "brand_code": null,
       "price": 1875,
-      "trade_date": "20261106",
-      "trade_time": "212732",
+      "trade_date": "20261107",
+      "trade_time": "203503",
       "distance_km": 3.03,
       "rank": 33
     },
@@ -457,7 +457,7 @@
       "brand_code": null,
       "price": 1885,
       "trade_date": "20261107",
-      "trade_time": "000143",
+      "trade_time": "235732",
       "distance_km": 3.97,
       "rank": 34
     },
@@ -469,8 +469,8 @@
       "longitude": 127.045141,
       "brand_code": null,
       "price": 2000,
-      "trade_date": "20261107",
-      "trade_time": "001858",
+      "trade_date": "20261108",
+      "trade_time": "002329",
       "distance_km": 4.71,
       "rank": 35
     }
@@ -490,6 +490,6 @@
     "failure_count": 0,
     "failures": [],
     "partial": false,
-    "fetched_at": "2026-11-07T08:46:42+09:00"
+    "fetched_at": "2026-11-08T08:00:45+09:00"
   }
 }
